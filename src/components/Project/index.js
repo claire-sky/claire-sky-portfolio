@@ -5,13 +5,13 @@ function Project({ project }) {
 
     return (
         <div key={title}>
-            <img
-                src={require(`../../assets/projects/${image}.jpg`)}
+             <img
+                src={require(`../../assets/projects/${image}.JPG`)}
                 alt={title}
             />
             <div>
                 <h3>
-                    <a href={link}>{title}</a>{' '}
+                    <a href={link}>{title}</a>
                     <a href={repository}>Repository</a>
                 </h3>
                 <p>{languages}</p>

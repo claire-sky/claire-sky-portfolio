@@ -41,7 +41,6 @@ function Contact() {
   return (
     <section>
       <form id='contact-form' onSubmit={handleSubmit}>
-        <h1 id='contact'>Contact Me</h1>
         <div>
           <label>Name: 
             <input
