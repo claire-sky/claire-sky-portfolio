@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { validateEmail } from '../../utils/helpers';
 
 function Contact() {
+  const [contactState, setContactState] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const { name, email, message } = contactState;
+  const [invalidEntry, setInvalidEntry] = useState('');
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!invalidEntry) {
+      console.log('Submit contact', contactState);
+    }
+  };
+
+  const handleChange = (event) => {
+    if (event.target.name === 'email') {
+
+    }
+  }
   return (
     <section>
        <h1 id='contact'>Contact Me</h1>

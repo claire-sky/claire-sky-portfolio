@@ -1,10 +1,8 @@
 import React from 'react';
-import coverImage from '../../assets/lemon-tea.jpg';
 
 function About() {
     return (
         <section>
-            <img src={coverImage} style={{ width: "100%" }} alt="cover" />
             <h1 id='about'>About Me</h1>
             <div className="my-2">
                 <p>
