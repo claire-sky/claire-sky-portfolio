@@ -19,64 +19,68 @@ function Contact() {
 
   const handleChange = (event) => {
     if (event.target.name === 'email') {
-
+      const isValid = validateEmail(event.target.value);
+      if (!isValid) {
+        setInvalidEntry('Please submit a valid email');
+      // } else {
+      //   setInvalidEntry('');
+      }
+    } else {
+      if (!event.target.value.length) {
+        setInvalidEntry(`${event.target.name} is required.`)
+      // } else {
+      //   setInvalidEntry('');
+      }
     }
-  }
+    if (!invalidEntry) {
+      setContactState({ ...contactState, [event.target.name]: event.target.value });
+      console.log('Handle contact', contactState);
+    }
+  };
+
   return (
     <section>
-       <h1 id='contact'>Contact Me</h1>
-
-      <div>
-        <label class="mdc-text-field mdc-text-field--filled">
-          <span class="mdc-text-field__ripple"></span>
-          <span class="mdc-floating-label" id="my-label-id">
-            Name{" "}
-          </span>
-          <input
-            class="mdc-text-field__input"
-            type="text"
-            aria-labelledby="my-label-id"
-            aria-controls="my-helper-id"
-            aria-describedby="my-helper-id"
-          ></input>
-          <span class="mdc-line-ripple"></span>
-        </label>
-      </div>
-      <div>
-        <label class="mdc-text-field mdc-text-field--filled">
-          <span class="mdc-text-field__ripple"></span>
-          <span class="mdc-floating-label" id="my-label-id">
-            E-mail{" "}
-          </span>
-          <input
-            class="mdc-text-field__input"
-            type="text"
-            aria-labelledby="my-label-id"
-            aria-controls="my-helper-id"
-            aria-describedby="my-helper-id"
-          ></input>
-          <span class="mdc-line-ripple"></span>
-        </label>
-      </div>
-      <div>
-        <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea mdc-text-field--no-label">
-          <span class="mdc-notched-outline">
-            <span class="mdc-notched-outline__leading"></span>
-            <span class="mdc-notched-outline__trailing"></span>
-            <span class="mdc-floating-label" id="my-label-id">
-              Note{" "}
-            </span>
-          </span>
-          <span class="mdc-text-field__resizer">
+      <form id='contact-form' onSubmit={handleSubmit}>
+        <h1 id='contact'>Contact Me</h1>
+        <div>
+          <label>Name: 
+            <input
+              type="text"
+              name="name"
+              defaultValue={name}
+              onBlur={handleChange}
+            ></input>
+          </label>
+        </div>
+        <div>
+          <label>Email: 
+            <input
+              type="email"
+              name="email"
+              defaultValue={email}
+              onBlur={handleChange}
+            ></input>
+          </label>
+        </div>
+        <div>
+          <label>Message: 
             <textarea
-              class="mdc-text-field__input"
+              type="text"
+              name="message"
               rows="8"
               cols="40"
-              aria-label="Label"
+              defaultValue={message}
+              onBlur={handleChange}
             ></textarea>
-          </span>
-        </label>
-      </div>
+          </label>
+        </div>
+        {invalidEntry && (
+          <div>
+            <p className="error-text">{invalidEntry}</p>
+          </div>
+        )}
+        <button type="submit">Submit</button>
+      </form>
     </section>
   );
 }
