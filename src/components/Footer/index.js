@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io';
+import { IoLogoGithub, IoLogoLinkedin, IoIosNutrition } from 'react-icons/io';
 import {
   IconButton,
   LinkOverlay,
@@ -22,6 +22,13 @@ function Footer() {
           <IconButton icon={<IoLogoLinkedin/>} />
           <LinkOverlay
             href="https://www.linkedin.com/in/eclconnolly/"
+            target="_blank"
+            rel="noopener noreferrer" />
+        </LinkBox>
+        <LinkBox>
+          <IconButton icon={<IoIosNutrition/>} />
+          <LinkOverlay
+            href="https://www.trifectanutrition.com/claire-sky"
             target="_blank"
             rel="noopener noreferrer" />
         </LinkBox>
