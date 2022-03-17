@@ -3,32 +3,36 @@ import Nav from './components/Nav';
 import Page from './components/Page';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import { Box, Center, Spacer } from '@chakra-ui/react';
 
 function App() {
   const [pages] = useState([
-    { name: "about" },
-    { name: "portfolio" },
-    { name: "contact" },
-    { name: "resume" }
+    { name: "About" },
+    { name: "Portfolio" },
+    { name: "Contact" },
+    { name: "Resume" }
   ]);
 
   const [currentPage, setCurrentPage ] = useState(pages[0]);
 
   return (
-    <div>
+    <Box>
       <Header>
-        <Nav
-          pages={pages}
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-        ></Nav>
+        <Spacer />
+        <Center>
+          <Nav
+            spacing='30px'
+            pages={pages}
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+          ></Nav>
+        </Center>
       </Header>
-      <main>
+      <Box p={5} shadow='md' borderWidth='1px'>
         <Page currentPage={currentPage}></Page>
-      </main>
+      </Box>
       <Footer></Footer>
-    </div>
+    </Box>
   );
 }
 

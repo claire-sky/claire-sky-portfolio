@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 import { validateEmail } from '../../utils/helpers';
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  Textarea,
+  Button
+} from '@chakra-ui/react';
 
 function Contact() {
   const [contactState, setContactState] = useState({
@@ -22,14 +29,14 @@ function Contact() {
       const isValid = validateEmail(event.target.value);
       if (!isValid) {
         setInvalidEntry('Please submit a valid email');
-      // } else {
-      //   setInvalidEntry('');
+      } else {
+        setInvalidEntry('');
       }
     } else {
       if (!event.target.value.length) {
         setInvalidEntry(`${event.target.name} is required.`)
-      // } else {
-      //   setInvalidEntry('');
+      } else {
+        setInvalidEntry('');
       }
     }
     if (!invalidEntry) {
@@ -39,48 +46,51 @@ function Contact() {
   };
 
   return (
-    <section>
+    <FormControl>
       <form id='contact-form' onSubmit={handleSubmit}>
         <div>
-          <label>Name: 
-            <input
+          <FormLabel>Name: 
+            <Input
               type="text"
-              name="name"
+              name="Name"
+              variant='outline'
               defaultValue={name}
               onBlur={handleChange}
-            ></input>
-          </label>
+            ></Input>
+          </FormLabel>
         </div>
         <div>
-          <label>Email: 
-            <input
+          <FormLabel>Email: 
+            <Input
               type="email"
-              name="email"
+              name="Email"
+              variant='outline'
               defaultValue={email}
               onBlur={handleChange}
-            ></input>
-          </label>
+            ></Input>
+          </FormLabel>
         </div>
         <div>
-          <label>Message: 
-            <textarea
+          <FormLabel>Message: 
+            <Textarea 
               type="text"
-              name="message"
+              name="Message"
+              variant='outline'
               rows="8"
               cols="40"
               defaultValue={message}
               onBlur={handleChange}
-            ></textarea>
-          </label>
+            ></Textarea >
+          </FormLabel>
         </div>
         {invalidEntry && (
           <div>
             <p className="error-text">{invalidEntry}</p>
           </div>
         )}
-        <button type="submit">Submit</button>
+        <Button type="submit">Submit</Button>
       </form>
-    </section>
+    </FormControl>
   );
 }
 

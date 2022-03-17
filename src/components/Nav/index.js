@@ -1,4 +1,11 @@
 import React, { useEffect } from 'react';
+import {
+  Menu,
+  MenuList,
+  MenuItem,
+  MenuButton,
+  Button,
+} from '@chakra-ui/react';
 
 function Nav(props) {
     const {
@@ -12,20 +19,22 @@ function Nav(props) {
     }, [currentPage]);
 
     return (
-      <nav>
-        <ul className="flex-row">
+      <Menu>
+      {({ isOpen }) => (
+        <>
+          <MenuButton isActive={isOpen} as={Button} rightIcon=">">Navigation</MenuButton>
+          <MenuList>
           {pages.map((Page) => (
-            <li
-              className={`${currentPage.name === Page.name && 'navActive'}`}
-              key={Page.name}
-            >
+            <MenuItem key={Page.name} >
               <span onClick={() => setCurrentPage(Page)} >
                 {Page.name}
               </span>
-            </li>
-          ))}
-        </ul>
-      </nav>
+            </MenuItem>
+        ))}
+          </MenuList>
+        </>
+      )}
+      </Menu>
     );
 }
 

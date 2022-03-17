@@ -1,14 +1,19 @@
 import React from 'react';
-import coverImage from '../../assets/lemon-tea.jpg';
+import {
+  Heading,
+  Flex,
+  Box
+} from '@chakra-ui/react';
 
 function Header(props) {
 
   return (
-    <header className="flex-row space-between">
-      <h1>Claire Sky</h1>
-      {/* <img src={coverImage} alt="lemon tea"></img> */}
-      {props.children}
-    </header>
+    <Box>
+        <Flex p={10} w="100%"  bgGradient="linear(to-r, blue.500, white)" >
+            <Heading as='h1' size='4xl'>Claire Sky</Heading>
+            {props.children}
+        </Flex>
+    </Box>
   );
 }
 

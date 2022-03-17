@@ -4,18 +4,19 @@ import About from '../About';
 import Portfolio from '../Portfolio';
 import Contact from '../Contact';
 import Resume from '../Resume';
+import { Heading } from '@chakra-ui/react';
 
 function Page({ currentPage }) {
 
   const renderPage = () => {
     switch (currentPage.name) {
-      case 'about me':
+      case 'About':
         return <About></About>;
-      case 'portfolio':
+      case 'Portfolio':
         return <Portfolio></Portfolio>;
-      case 'contact':
+      case 'Contact':
         return <Contact></Contact>;
-      case 'resume':
+      case 'Resume':
         return <Resume></Resume>;
       default:
         return <About></About>;
@@ -24,7 +25,7 @@ function Page({ currentPage }) {
 
   return (
     <section>
-      <h2>{currentPage.name}</h2>
+      <Heading>{currentPage.name}</Heading>
       <PageContent>{renderPage()}</PageContent>
     </section>
   );
