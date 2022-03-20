@@ -3,6 +3,15 @@ import Project from "../Project";
 
 function Portfolio() {
     const [projects] = useState([
+        
+        {
+            title: "Whiskey Business",
+            description: 'You can use the website to search cocktail recipies. Create an account to save and share your favorite recipes with other individuals online.            ',
+            languages: 'JavaScript, CSS, HTML, GraphQL, JWT Authentication, MERN, Chakra',
+            image: "Whiskey_Business",
+            repository: 'https://github.com/EricKenji/whiskey-business/',
+            link: 'https://arcane-shelf-84573.herokuapp.com/'
+        },
         {
             title: "Now We're Cooking",
             description: 'Users can search for recipes via main ingredient (protein of some type or vegetarian/vegan) and will receive a list of recipes. The user will also be able to change ingredients, serving sizes, and add their own recipes.',
