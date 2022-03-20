@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/claire-sky-portfolio/static/css/main.dc6e9861.css",
-    "main.js": "/claire-sky-portfolio/static/js/main.06ffb491.js",
+    "main.js": "/claire-sky-portfolio/static/js/main.8afc4810.js",
     "static/js/787.8d4da8e4.chunk.js": "/claire-sky-portfolio/static/js/787.8d4da8e4.chunk.js",
     "static/media/Claire-Sky-Resume.pdf": "/claire-sky-portfolio/static/media/Claire-Sky-Resume.e9cc9898bdf414fec204.pdf",
     "static/media/Now_We're_Cooking.JPG": "/claire-sky-portfolio/static/media/Now_We're_Cooking.46e54f4976b48b65f97d.JPG",
@@ -11,13 +11,14 @@
     "static/media/claire.jpg": "/claire-sky-portfolio/static/media/claire.2627599eccbdddab9aa4.jpg",
     "static/media/Work_Day_Scheduler.JPG": "/claire-sky-portfolio/static/media/Work_Day_Scheduler.adc78611f71c6c000d26.JPG",
     "static/media/Note_Taker.JPG": "/claire-sky-portfolio/static/media/Note_Taker.50ca46e6ba5068366548.JPG",
+    "static/media/Whiskey_Business.JPG": "/claire-sky-portfolio/static/media/Whiskey_Business.189ed49ed77ec4d37388.JPG",
     "index.html": "/claire-sky-portfolio/index.html",
     "main.dc6e9861.css.map": "/claire-sky-portfolio/static/css/main.dc6e9861.css.map",
-    "main.06ffb491.js.map": "/claire-sky-portfolio/static/js/main.06ffb491.js.map",
+    "main.8afc4810.js.map": "/claire-sky-portfolio/static/js/main.8afc4810.js.map",
     "787.8d4da8e4.chunk.js.map": "/claire-sky-portfolio/static/js/787.8d4da8e4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dc6e9861.css",
-    "static/js/main.06ffb491.js"
+    "static/js/main.8afc4810.js"
   ]
 }
